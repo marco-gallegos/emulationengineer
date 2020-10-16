@@ -25,6 +25,10 @@ intentos = 5
 letra = ""
 status_partida = True
 
+recuento =list()
+filename_recuento = "resultP.txt"
+
+
 def update_avance(original:list, faltantes:list, avance:list, actual:str)->list:
     """actualiza la lista de avance
 
@@ -85,7 +89,10 @@ while not finalizar_partida:
 
     if len(palabra_lista) == 0 or intentos <= 0:
         finalizar_partida = True
-    
+    recuento.append({
+        "fallos": 5 - intentos,
+        "restantes": "".join(palabra_lista)
+    })
 
 status_partida = True if len(palabra_lista) == 0 and intentos > 0 else False
 
@@ -94,3 +101,11 @@ if status_partida:
     imprime_list(avance=palabra_lista_avance)
 else:
     print("Vuelve a Jugar")
+
+
+status_file = open(filename_recuento, 'w')
+for dict_avance in recuento:
+    row_csv = f"{dict_avance['fallos']},{dict_avance['restantes']}\n"
+    status_file.write(row_csv)
+
+status_file.close()
