@@ -1,4 +1,7 @@
+resultC.txt
 resultP.txt
+emulationengineer/bin/*
+emulationengineer/obj/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

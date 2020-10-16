@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1602820623 source:/mnt/HomeStorage/Bellatrix/Documentos/Codigo/c++/emulationengineer/main.cpp
+	<iostream>
+	<list>
+
